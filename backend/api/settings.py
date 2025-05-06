@@ -40,7 +40,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
-    "http://3.143.173.23"
+    "http://3.143.173.23:8080"
 ]
 
 # Application definition
