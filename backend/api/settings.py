@@ -31,7 +31,7 @@ SECRET_KEY = "django-insecure-dg3=y*@uf_x9d$a&j28*5tviu4(_hc!@^7159muu&sl17f-8!1
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "http://3.143.173.23"
+    "3.143.173.23"
 ]
 
 DATABASE_URL = os.getenv('DATABASE_URL')
