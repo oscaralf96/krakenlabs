@@ -30,7 +30,9 @@ SECRET_KEY = "django-insecure-dg3=y*@uf_x9d$a&j28*5tviu4(_hc!@^7159muu&sl17f-8!1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "http://3.143.173.23"
+]
 
 DATABASE_URL = os.getenv('DATABASE_URL')
 AUTH_USER_MODEL = 'users.CustomUser' 
@@ -38,6 +40,7 @@ AUTH_USER_MODEL = 'users.CustomUser'
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8080",
     "http://127.0.0.1:8080",
+    "http://3.143.173.23"
 ]
 
 # Application definition
