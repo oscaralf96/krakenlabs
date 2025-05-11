@@ -93,7 +93,7 @@ services:
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles
         build:
-            context: ./docker/dev/nginx
+            context: ./docker/local/nginx
             dockerfile: Dockerfile
         ports:
             - "8080:80"
