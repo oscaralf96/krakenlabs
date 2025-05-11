@@ -56,7 +56,7 @@ class FeedbackFormView(View):
         intended_meaning = request.POST.get('intended_meaning')
 
         system_prompt = """You are a teacher who is providing feedback on a student's of elementary school answer to a question.
-        Please provide feedback on the answer and suggest improvements. Provide a 50 word extra information. Provide the feedback in English and Spanish."""
+        Please provide feedback on the answer and spelling and suggest improvements. Provide a 50 word extra information. Provide the feedback in English and Spanish."""
         user_text = f"""Question: {question}
 Answer: {answer}
 The student is trying to convey the following meaning:in spanish {intended_meaning}.
