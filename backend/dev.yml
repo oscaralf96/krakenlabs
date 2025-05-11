@@ -9,7 +9,8 @@ services:
     #         - "9200:9200"
     #     networks:
     #         - authors-api
-    api:
+    krakenlabs_api:
+        container_name: krakenlabs_api
         build:
             context: .
             dockerfile: ./docker/dev/django/Dockerfile
@@ -24,14 +25,15 @@ services:
             - ./.envs/.dev/.django
             - ./.envs/.dev/.postgres
         depends_on:
-            - postgres
+            - krakenlabs_postgres
             # - mailhog
             # - redis
             # - es
         networks:
             - krakenlabs-api
 
-    postgres:
+    krakenlabs_postgres:
+        container_name: krakenlabs_postgres
         build:
             context: .
             dockerfile: ./docker/dev/postgres/Dockerfile
@@ -85,10 +87,11 @@ services:
     #     networks:
     #         - krakenlabs-api
 
-    nginx:
+    krakenlabs_nginx:
+        container_name: krakenlabs_nginx
         restart: always
         depends_on:
-            - api
+            - krakenlabs_api
         volumes:
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles
@@ -106,7 +109,12 @@ networks:
 
 volumes:
     static_volume:
+        name: krakenlabs_static_volume
     media_volume:
-    dev_postgres_data: {}
-    dev_postgres_data_backups: {}
-    flower_data: {}
+        name: krakenlabs_media_volume
+    dev_postgres_data:
+        name: krakenlabs_postgres_data
+    dev_postgres_data_backups:
+        name: krakenlabs_postgres_data_backups
+    flower_data:
+        name: krakenlabs_flower_data
