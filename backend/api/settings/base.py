@@ -47,6 +47,7 @@ DJANGO_APPS = [
 MY_APPS = [
     "core_apps.users",
     "core_apps.landing",
+    "core_apps.aimodels"
 ]
 
 

@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Provide Your Inputs for Feedback</h2>
+
+        <form method="post" action="{% url 'aimodels:feedback' %}">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="question" class="form-label">Question (English):</label>
+                <textarea class="form-control" id="question" name="question" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="answer" class="form-label">Your Answer (English):</label>
+                <textarea class="form-control" id="answer" name="answer" rows="3" required></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="intended_meaning" class="form-label">What You Meant (Spanish):</label>
+                <textarea class="form-control" id="intended_meaning" name="intended_meaning" rows="3" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit for Feedback</button>
+        </form>
+
+        {% if submitted %}
+            <div class="mt-4">
+                <h4>Submitted Data:</h4>
+                <p><strong>Question:</strong> {{ question }}</p>
+                <p><strong>Answer:</strong> {{ answer }}</p>
+                <p><strong>Intended Meaning:</strong> {{ intended_meaning }}</p>
+                <p><strong>AI Feedback:</strong> {{ feedback }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
