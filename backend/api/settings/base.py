@@ -46,6 +46,7 @@ DJANGO_APPS = [
 
 MY_APPS = [
     "core_apps.users",
+    "core_apps.landing",
 ]
 
 
@@ -71,10 +72,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = "api.urls"
 
+TEMPLATE_DIR = os.path.join(BASE_DIR, "assets/templates")
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [TEMPLATE_DIR],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -148,11 +150,13 @@ ADMIN_URL = "supersecret/"
 STATIC_URL = "/staticfiles/"
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # BASE_DIR / "staticfiles"
 
+STATICFILES_DIRS = ("assets",)
+
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
+]   
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
