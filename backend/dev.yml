@@ -105,6 +105,7 @@ services:
         volumes:
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles
+            - ./nginx/conf/:/etc/nginx/conf.d/:ro
             - ./certbot/www/:/var/www/certbot/:ro
         build:
             context: ./docker/dev/nginx
