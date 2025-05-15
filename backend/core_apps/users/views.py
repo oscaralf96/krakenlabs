@@ -39,17 +39,3 @@ class WebsiteCreateView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
-from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
-from django.views import View
-from django.views.decorators.http import require_POST
-
-@csrf_exempt
-@require_POST
-def test_login_view(request):
-    print("✅ CSRF-Exempt View Reached")
-
-    if request.method == 'POST':
-        return JsonResponse({'success': True, 'message': 'CSRF is not enforced here.'})
-    
-    return JsonResponse({'error': 'Only POST allowed'}, status=405)
