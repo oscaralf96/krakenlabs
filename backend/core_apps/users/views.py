@@ -12,10 +12,11 @@ from .models import Website
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
-@csrf_exempt
+@method_decorator(csrf_exempt, name='dispatch')
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
+    @csrf_exempt
     def post(self, request, *args, **kwargs):
         print("Login view hit") 
         serializer = self.get_serializer(data=request.data)
