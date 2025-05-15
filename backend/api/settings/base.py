@@ -177,7 +177,10 @@ SIMPLE_JWT = {
     "UPDATE_LAST_LOGIN": False,
 
     "ALGORITHM": "HS256",
-    "SIGNING_KEY": env.str('SECRET_KEY'),
+    "SIGNING_KEY": env(
+        "DJANGO_SECRET_KEY",
+        default="django-insecure-dg3=y*@uf_x9d$a&j28*5tviu4(_hc!@^7159muu&sl17f-8!1",
+    ),
     "VERIFYING_KEY": "",
     "AUDIENCE": None,
     "ISSUER": None,
