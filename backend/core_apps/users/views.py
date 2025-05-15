@@ -42,8 +42,10 @@ class WebsiteCreateView(APIView):
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.views import View
+from django.views.decorators.http import require_POST
 
 @csrf_exempt
+@require_POST
 def test_login_view(request):
     print("✅ CSRF-Exempt View Reached")
 
