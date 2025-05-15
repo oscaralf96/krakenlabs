@@ -16,7 +16,6 @@ class RegisterView(generics.CreateAPIView):
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
-    @csrf_exempt
     def post(self, request, *args, **kwargs):
         print("Login view hit") 
         serializer = self.get_serializer(data=request.data)
