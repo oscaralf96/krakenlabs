@@ -19,4 +19,5 @@ ALLOWED_HOSTS = [
 CSRF_TRUSTED_ORIGINS = [
     "http://3.143.173.23:8080"
     "http://dev.krakenlabs.site",
+    "https://dev.krakenlabs.site",
 ]
