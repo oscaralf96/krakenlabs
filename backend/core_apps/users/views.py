@@ -12,7 +12,7 @@ from .models import Website
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
 
-@method_decorator(csrf_exempt, name='dispatch')
+@csrf_exempt
 class LoginView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
