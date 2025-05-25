@@ -15,7 +15,7 @@ services:
             context: .
             dockerfile: ./docker/dev/django/Dockerfile
         command: /start
-        volumes:krakenlabs_api
+        volumes:
             - .:/app:z
             - static_volume:/app/staticfiles
             - media_volume:/app/mediafiles

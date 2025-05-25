@@ -1,0 +1,42 @@
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1, h2 {
+    color: #d63031;
+    margin-bottom: 1rem;
+  }
+  
+  .english {
+    color: #2d3436;
+    margin-bottom: 1rem;
+  }
+  
+  .spanish {
+    color: #0984e3;
+    margin-bottom: 2rem;
+  }
+  
+  .highlight {
+    font-weight: bold;
+    background-color: #ffeaa7;
+    padding: 0.2em 0.4em;
+    border-radius: 10px;
+    color: #e17055;
+  }
